@@ -1,15 +1,23 @@
 {
-    "public": true,
-    "builds": [
-      {
-        "src": "src/server.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "(.*)",
-        "dest": "src/server.js"
-      }
-    ] 
-  }
+  "public": true,
+  "builds": [
+    {
+      "src": "src/server.js",
+      "use": "@vercel/node",
+      "config": { "PrismaClient": "prisma/client" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "(.*)",
+      "dest": "src/server.js"
+    }
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "@vercel/node",
+      "includeFiles": "src/**/*"
+    }
+  },
+  "version": 2
+}
