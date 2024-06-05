@@ -4,7 +4,10 @@
     {
       "src": "src/server.js",
       "use": "@vercel/node",
-      "config": { "PrismaClient": "prisma/client" }
+      "config": { 
+        "PrismaClient": "prisma/client",
+        "PrismaGenerate": "npm run prisma:generate"
+      }
     }
   ],
   "routes": [
