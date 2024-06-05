@@ -1,0 +1,20 @@
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model log_consulta {
+  id          Int      @id @default(autoincrement())
+  data_hora    DateTime
+  ip          String
+  ano         String
+  mes         String
+  municipio   String
+  valor       Int
+  qtd_beneficiados Int
+}
