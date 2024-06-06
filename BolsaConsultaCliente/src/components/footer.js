@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+// Rodapé da página
 
+import React, { useState } from 'react';
 export const Footer = () => {
   const [aceitou, setAceitou] = useState(false);
 
   const handleClickAceitar = () => {
     setAceitou(true);
-    // Aqui você pode adicionar a lógica para prosseguir com o teste após o usuário aceitar
   };
 
   return (

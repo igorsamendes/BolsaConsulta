@@ -1,5 +1,6 @@
-import bolsaFamiliaImage from '../img/bolsaFamilia.png';
+// Cabeçalho da página
 
+import bolsaFamiliaImage from '../img/bolsaFamilia.png';
 export const Header = () => {
   return (
     <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-blue-550 px-6 py-3 sm:px-3.5 sm:before:flex-1">

@@ -1,4 +1,5 @@
-// server.js
+// Arquivo de criação do server e gerenciamento de dados de envio
+
 const express = require('express');
 const cors = require('cors'); // Import the cors package
 const { PrismaClient } = require('@prisma/client');
@@ -6,7 +7,6 @@ const prisma = new PrismaClient();
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Use CORS middleware
 app.use(cors());
 
 app.use(express.json());

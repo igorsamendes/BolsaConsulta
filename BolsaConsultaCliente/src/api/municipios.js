@@ -1,5 +1,6 @@
-const API_URL = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
+// Consulta à API do IBGE que retona os dados dos municipios pertencentes ao estado selecionado
 
+const API_URL = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
 export const getMunicipios = async (estadoId) => {
   try {
     const response = await fetch(`${API_URL}/${estadoId}/municipios`);

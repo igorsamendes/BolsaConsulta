@@ -1,9 +1,12 @@
+//Componente reposnsável por contrução do formulário e gerenciamento de consultas e metodos
+
 import React, { useState, useEffect } from "react";
 import { getEstados } from "../api/estados.js";
 import { getMunicipios } from "../api/municipios.js";
 import { getConsulta } from "../api/consulta.js";
 import Modal from "./modal";
-import salvarLog from "./salvarLog";
+import salvarLog from "../salvarLog.js";
+
 
 export const Body = () => {
     const [estados, setEstados] = useState([]);
@@ -14,6 +17,7 @@ export const Body = () => {
     const [showModal, setShowModal] = useState(false);
     const [error, setError] = useState("");
 
+    // Chama metodo responsável pela busca dos estados e constroi o array de estados
     useEffect(() => {
         const fetchEstadosData = async () => {
             try {
@@ -28,6 +32,7 @@ export const Body = () => {
         fetchEstadosData();
     }, []);
 
+    // Lida com a alteração do select de estados para que quando houver mudandanças reconstrua o select de municipios de acordo com o estado selacionado
     const mudancaEstado = async (event) => {
         const estadoId = event.target.value;
         setSelectedEstado(estadoId);
@@ -49,8 +54,9 @@ export const Body = () => {
         setSelectedMunicipio(event.target.value);
     };
 
+    // Lida com o submit do formulário chamando o metodo da consulta e em seguida o modal de exibição dos dados
     const processarEnvio = async (event) => {
-        event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+        event.preventDefault();
         const mesId = event.target.month.value;
         const anoId = event.target.year.value;
         const municipioId = event.target.municipio.value;
@@ -73,7 +79,7 @@ export const Body = () => {
                     valor: consultaResult[0].valor,
                     qtd_beneficiados: consultaResult[0].quantidadeBeneficiados
                 };
-    
+
                 // Chamar a função salvarLog com o array criado
                 salvarLog(logData);
             }
@@ -93,6 +99,7 @@ export const Body = () => {
         setShowModal(false);
     };
 
+    // corpo do aplicativo
     return (
         <div className="flex items-center justify-center h-screen altura bg-body">
             <div className="container max-w-2xl p-6 rounded-lg shadow-shadow-dark bg-blue-550">

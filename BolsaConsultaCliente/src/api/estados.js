@@ -1,6 +1,6 @@
-const API_URL = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados'; // Substitua pela sua URL de consulta de estados
+// Consulta à API do IBGE que retona os dados dos estados brasileiros
 
-// Função para obter a lista de estados
+const API_URL = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
 export const getEstados = async () => {
   try {
     const response = await fetch(API_URL);

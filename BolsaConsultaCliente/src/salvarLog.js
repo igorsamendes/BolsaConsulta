@@ -1,6 +1,6 @@
-// salvarLogs.js
-import axios from 'axios';
+// Termina a construção do array que contem os dados de log e faz a chamada da rota de salvamento dos dados em banco
 
+import axios from 'axios';
 const salvarLog = async (dadosConsulta) => {
   try {
     const response = await axios.get('https://api64.ipify.org?format=json');
