@@ -10,16 +10,20 @@ const salvarLog = async (dadosConsulta) => {
       ip: ipAddress,
       ...dadosConsulta
     };
-    const api = axios.create({
-      baseURL: 'https://bolsa-consulta-server.vercel.app/api',
-    })
-    const dadosJson = JSON.stringify(dadosCompletos);
-    const resposta = await api.post('/logs', dadosJson, {
+    const result = await fetch('https://bolsa-consulta-server.vercel.app/api/logs', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify(dadosCompletos),
     });
-    console.log(resposta.data);
+
+    if (!result.ok) {
+      throw new Error('Erro ao salvar log');
+    }
+
+    const responseData = await result.json();
+    console.log('Log salvo com sucesso:', responseData);
   } catch (error) {
     console.error("Erro ao salvar log:", error);
   }

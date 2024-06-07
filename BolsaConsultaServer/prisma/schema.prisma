@@ -10,7 +10,7 @@ generator client {
 
 model log_consulta {
   id          Int      @id @default(autoincrement())
-  data_hora    DateTime
+  data_hora   DateTime
   ip          String
   ano         String
   mes         String
