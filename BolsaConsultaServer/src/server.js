@@ -33,7 +33,7 @@ app.post('/api/logs', async (req, res) => {
                 qtd_beneficiados: dados.qtd_beneficiados
             }
         });
-        res.status(201).json({ message: "Dados inseridos com sucesso!", dados });
+        res.status(201).json({ message: "Dados inseridos com sucesso!" });
     } catch (error) {
         console.error("Erro ao inserir dados:", error);
         res.status(500).json({ error: "Erro ao inserir dados" });
