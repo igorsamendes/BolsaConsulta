@@ -7,14 +7,24 @@ const prisma = new PrismaClient();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use((req, res, next) => {
-    //Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "" indicando que qualquer site pode fazer a conexão
-    res.header("Access-Control-Allow-Origin", "");
-    //Quais são os métodos que a conexão pode realizar na API
-    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
-    app.use(cors());
-    next();
-});
+// app.use((req, res, next) => {
+//     //Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "" indicando que qualquer site pode fazer a conexão
+//     res.header("Access-Control-Allow-Origin", "");
+//     //Quais são os métodos que a conexão pode realizar na API
+//     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+//     app.use(cors());
+//     next();
+// });
+
+// Configuração do CORS
+const corsOptions = {
+    origin: 'https://bolsa-consulta.vercel.app/',
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    credentials: true,
+    optionsSuccessStatus: 204 // Para compatibilidade com navegadores antigos
+  };
+  
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
