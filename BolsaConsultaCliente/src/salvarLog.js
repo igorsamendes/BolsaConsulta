@@ -10,9 +10,11 @@ const salvarLog = async (dadosConsulta) => {
       ip: ipAddress,
       ...dadosConsulta
     };
-
+    const api = axios.create({
+      baseURL: 'https://bolsa-consulta-server.vercel.app/api',
+    })
     const dadosJson = JSON.stringify(dadosCompletos);
-    const resposta = await axios.post('https://bolsa-consulta-server.vercel.app/api/logs', dadosJson, {
+    const resposta = await api.post('/logs', dadosJson, {
       headers: {
         'Content-Type': 'application/json'
       }
