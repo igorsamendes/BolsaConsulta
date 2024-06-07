@@ -3,11 +3,8 @@
   "builds": [
     {
       "src": "src/server.js",
-      "use": "@vercel/node",
-      "config": { 
-        "PrismaClient": "prisma/client",
-        "PrismaGenerate": "npm run prisma:generate"
-      }
+      "use": "@vercel/node"
+
     }
   ],
   "routes": [
@@ -16,11 +13,5 @@
       "dest": "src/server.js"
     }
   ],
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "@vercel/node",
-      "includeFiles": "src/**/*"
-    }
-  },
   "version": 2
 }
