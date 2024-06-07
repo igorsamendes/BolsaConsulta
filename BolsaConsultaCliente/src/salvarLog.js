@@ -12,8 +12,12 @@ const salvarLog = async (dadosConsulta) => {
     };
 
     const dadosJson = JSON.stringify(dadosCompletos);
-    const resposta = await axios.post('https://bolsa-consulta-server.vercel.app/api/logs', dadosJson);
-    return resposta.data;
+    await axios.post('https://bolsa-consulta-server.vercel.app/api/logs', dadosJson, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
   } catch (error) {
     console.error("Erro ao salvar log:", error);
   }
