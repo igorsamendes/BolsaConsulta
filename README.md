@@ -79,21 +79,26 @@ npm install
 
 # Como configurar o projeto para executar localmente
 
-1- Altere as configurações do banco de dados no arquivo .env localizado na pasta prisma no diretório BolsaConsultaServer utilizando como base o exemplo abaixo.
+1- Crie um arquivo .env para adicionar as configurações do banco de dados na pasta prisma no diretório BolsaConsultaServer utilizando como base o exemplo abaixo.
 
 ```
 DATABASE_URL=mysql://root:senha@localhost:3306/NomeDoBanco
 ```
+2- Crie um arquivo .env para adicionar as configurações da porta que será executado o projeto react, no diretório BolsaConsultaCliente utilizando como base o exemplo abaixo.
 
-2- Altere as configurações específicas do domínio remoto no arquivo server.js localizado na pasta src no diretório BolsaConsultaServer para que seja utilizado o trecho que precede o comentário "Execução local".
+```
+PORT=3001
+```
 
-3- Altere as configurações específicas do domínio remoto no arquivo salvarLog.js localizado na pasta src no diretório BolsaConsultaCliente para que seja utilizado o link abaixo na constante result.
+3- Altere as configurações específicas do domínio remoto no arquivo server.js, localizado na pasta src no diretório BolsaConsultaServer para que seja utilizado o trecho que precede o comentário "Execução local" no lugar do que esta sendo utilizado.
+
+4- Altere as configurações específicas do domínio remoto no arquivo salvarLog.js, localizado na pasta src no diretório BolsaConsultaCliente para que seja utilizado o link abaixo na constante result.
 
 ```
 http://localhost:3000/api/logs
 ```
 
-4- Execute o comando abaixo para aplicar as migrações necessárias ao banco de dados.
+5- Execute o comando abaixo para aplicar as migrações necessárias ao banco de dados.
 
 ```
 npx prisma migrate dev --name bolsa-consulta
@@ -105,7 +110,7 @@ npx prisma migrate dev --name bolsa-consulta
 node src/server
 ```
 
-5- Inicie o cliente React executando o comando abaixo na pasta BolsaConsultaCliente.
+7- Inicie o cliente React executando o comando abaixo na pasta BolsaConsultaCliente.
 
 ```
 npm start
