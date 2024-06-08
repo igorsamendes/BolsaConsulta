@@ -79,7 +79,7 @@ npm install
 
 # Como configurar o projeto para executar localmente
 
-1- Crie um arquivo .env para adicionar as configurações do banco de dados na pasta prisma no diretório BolsaConsultaServer utilizando como base o exemplo abaixo.
+1- Crie um arquivo .env para adicionar as configurações do seu banco de dados local na pasta prisma no diretório BolsaConsultaServer utilizando como base o exemplo abaixo. Certifique-se de ter um servidor local de banco de dados disponível.
 
 ```
 DATABASE_URL=mysql://root:senha@localhost:3306/NomeDoBanco
