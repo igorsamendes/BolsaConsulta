@@ -98,7 +98,7 @@ PORT=3001
 http://localhost:3000/api/logs
 ```
 
-5- Execute o comando abaixo para aplicar as migrações necessárias ao banco de dados.
+5- Navegue até a pasta BolsaConsultaServer e execute o comando abaixo para aplicar as migrações necessárias ao banco de dados.
 
 ```
 npx prisma migrate dev --name bolsa-consulta
