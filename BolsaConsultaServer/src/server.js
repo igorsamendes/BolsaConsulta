@@ -7,12 +7,16 @@ const prisma = new PrismaClient();
 const app = express();
 const port = process.env.PORT || 3000;
 
+//Configurações específicas do domínio remoto
 app.use(cors({
     origin: 'https://bolsa-consulta.vercel.app', // Permitir requisições deste domínio
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
     optionsSuccessStatus: 204
 }));
+
+// Execução local
+//app.use(cors());
 
 app.use(express.json());
 
