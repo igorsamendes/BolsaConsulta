@@ -26,7 +26,7 @@ O acesso aos arquivos é feito pelo endereço: [Bolsa Consulta](https://github.c
 
 # 🛠️ Abrir e rodar o projeto
 
-Para poder rodar o projeto, primeiramente você deve instalar o git, fazer o clone do projeto na sua máquina, instalar o Node.js e configurar as variáveis de ambiente. Abaixo está o passo a passo de como fazer todos os itens citados anteriromente.
+Para rodar o projeto, primeiramente você deve instalar o git, fazer o clone do projeto na sua máquina, instalar o Node.js e configurar o projeto. Abaixo está o passo a passo de como fazer todos os itens citados anteriormente.
 
 #  Como baixar o git na sua máquina
 
@@ -38,7 +38,7 @@ https://www.git-scm.com/downloads
 
 # Como fazer o clone do projeto para a sua máquina
 
-Abra o terminal do git em uma pasta onde você deseja salvar os arquivos do projeto. Abaixo está os comandos necessários para clonar o projeto.
+Abra o terminal do git em uma pasta onde você deseja salvar os arquivos do projeto. Abaixo está o comando necessário para clonar o projeto.
 
 Comando para clonar o projeto
 ```
@@ -50,7 +50,7 @@ Comando para entrar na pasta do projeto
 cd BolsaConsulta
 ```
 
-Após rodar esses comandos, você estará com o projeto na sua máquina.
+Após rodar esse comando, você estará com o projeto na sua máquina.
 
 # Como instalar o Node.js
 
@@ -79,7 +79,7 @@ npm install
 
 # Como configurar o projeto para executar localmente
 
-1- Altere as configurações do banco de dados no arquivo .env localizado na pasta prisma no diretório BolsaConsultaServer como mostra o exemplo abaixo.
+1- Altere as configurações do banco de dados no arquivo .env localizado na pasta prisma no diretório BolsaConsultaServer utilizando como base o exemplo abaixo.
 
 ```
 DATABASE_URL=mysql://root:senha@localhost:3306/NomeDoBanco
@@ -87,13 +87,29 @@ DATABASE_URL=mysql://root:senha@localhost:3306/NomeDoBanco
 
 2- Altere as configurações específicas do domínio remoto no arquivo server.js localizado na pasta src no diretório BolsaConsultaServer para que seja utilizado o trecho que precede o comentário "Execução local".
 
-3- Altere as configurações específicas do domínio remoto no arquivo salvarLog.js localizado na pasta src no diretório BolsaConsultaCliente para que seja utilizado o link http://localhost:3000/api/logs na constante result.
+3- Altere as configurações específicas do domínio remoto no arquivo salvarLog.js localizado na pasta src no diretório BolsaConsultaCliente para que seja utilizado o link abaixo na constante result.
 
-4- Execute o comando "npx prisma migrate dev --name bolsa-consulta" para aplicar as migrações necessárias ao banco de dados.
+```
+http://localhost:3000/api/logs
+```
 
-6- Inicie o servidor executando o comando "node src/server" na pasta BolsaConsultaServer.
+4- Execute o comando abaixo para aplicar as migrações necessárias ao banco de dados.
 
-5- Inicie o cliente React executando o comando "npm start" na pasta BolsaConsultaCliente.
+```
+npx prisma migrate dev --name bolsa-consulta
+```
+
+6- Inicie o servidor executando o comando abaixo na pasta BolsaConsultaServer.
+
+```
+node src/server
+```
+
+5- Inicie o cliente React executando o comando abaixo na pasta BolsaConsultaCliente.
+
+```
+npm start
+```
 
 # Desenvolvedor
 
